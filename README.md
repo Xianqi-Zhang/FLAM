@@ -2,7 +2,7 @@
 
 ### [Project Page](https://xianqi-zhang.github.io/FLAM)
 
-![flam](/assets/flam.png "Overview of FLAM."){:height="50%" width="50%"}
+<img src="/assets/flam.png" width="50%" height="50%">
 
 ## A. Installation
 
