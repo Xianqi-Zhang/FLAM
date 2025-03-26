@@ -1,0 +1,389 @@
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description"
+            content="FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation">
+        <meta name="author" content="Xianqi Zhang">
+        <title>FLAM</title>
+
+        <!-- Bootstrap core CSS -->
+        <!--link href="bootstrap.min.css" rel="stylesheet"-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- Custom styles for this template -->
+        <link href="assets/offcanvas.css" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <!-- Font Awesome CSS -->
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet" media="screen">
+        <!-- Animate css -->
+        <link href="assets/css/animate.css" rel="stylesheet">
+        <!-- Magnific css -->
+        <link href="assets/css/magnific-popup.css" rel="stylesheet">
+        <!-- Responsive CSS -->
+        <link href="assets/css/responsive.css" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/images/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">        
+    </head>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container"></div>
+        <h1 style="text-align: center; margin-bottom: 5px; font-family: Serif; font-style: italic;">
+            <span class="text-shadow">FLAM</span>:
+            <span class="text-shadow">F</span>oundation Model-Based Body Stabilization for Humanoid
+            <span class="text-shadow">L</span>ocomotion
+            <span class="text-shadow">a</span>nd
+            <span class="text-shadow">M</span>anipulation
+        </h1>
+        <!-- <h3 style="text-align: center; margin-bottom: 5px; font-family: Serif; ">
+            <font color="#48b1a8">[Under Review]</font>
+        </h3>
+        <h3 style="text-align: center; margin-bottom: 5px; font-family: Serif; ">
+            <font color="#48b1a8">[The website will be updated once the paper is accepted.]</font>
+        </h3>
+        <hr> -->
+        <p class="authors">
+            <h3 style="color: #000000; font-family: Sans-serif;">
+                Xianqi Zhang<sup>1</sup>,
+                <a class="custom-link" href="https://scholar.google.com/citations?hl=zh-CN&user=5vGVhd4AAAAJ">Xingtao Wang<sup>*1</sup></a>,
+                <a class="custom-link" href="https://scholar.google.com/citations?user=4LsZhDgAAAAJ&hl=zh-CN">Xiaopeng Fan<sup>1,2</sup>, <i>Senior Member, IEEE</i></a>,
+                <a class="custom-link" href="https://scholar.google.com/citations?hl=zh-CN&user=QXyj0hkAAAAJ">Debin Zhao<sup>1,2</sup>, <i>Member, IEEE</i></a>
+            </h3>
+        </p>
+        <h3 style="text-align: center; margin-bottom: 10px; font-family: Serif; ">
+            <sup>1</sup>Harbin Institute of Technology, <sup>2</sup>Peng Cheng Laboratory
+        </h3>
+    
+        <h3 style="text-align: center; margin-bottom: 10px; font-family: Serif; ">
+        </h3>
+        <div class="button-container">
+            <button class="button">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/document.png" alt="Paper">
+                <a href="" target="_blank" class="button"> 
+                    <span>Paper (soon)</span> 
+                </a>
+            </button>
+            <button class="button">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
+                <a href="https://github.com/Xianqi-Zhang/FLAM" target="_blank" class="button"> 
+                    <span>Code</span> 
+                </a>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <!-- <hr style="margin-top: 5px; font-family: Serif; "> -->
+            <h2 style="text-align:left; font-family: Serif; font-weight: bold;">
+                <font color="#000000">Abstract</font>
+            </h2>
+            <hr>
+            <p align="justify">
+            <font color="grey">
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+                Humanoid robots have attracted significant attention in recent years. 
+                Reinforcement Learning (RL) is one of the
+                main ways to control the whole body of humanoid robots. RL
+                enables agents to complete tasks by learning from environment
+                interactions, guided by task rewards. However, existing methods
+                neglect the impact of body stability on humanoid locomotion
+                and manipulation. Achieving robust performance in whole-body
+                control remains challenging for RL methods that rely solely on
+                task rewards. In this paper, we propose a Foundation modelbased method 
+                for humanoid Locomotion And Manipulation
+                (FLAM for short). FLAM integrates a stabilizing reward
+                function with a basic policy. The stabilizing reward function
+                is designed to encourage the robot to learn stable postures,
+                thereby accelerating the learning process and facilitating task
+                completion. Specifically, the robot pose is first mapped to the 3D
+                virtual human model. Then, the human pose is stabilized and
+                reconstructed through a human motion reconstruction model.
+                Finally, the pose before and after reconstruction is used to
+                compute the stabilizing reward. By combining this stabilizing
+                reward with the task reward, FLAM effectively guides policy
+                learning. Experimental results on a simulated humanoid robot
+                benchmark demonstrate that FLAM outperforms state-of-theart RL methods, 
+                highlighting its effectiveness in improving
+                stability and overall performance. 
+            </font>
+            </p>
+        </div>
+        <br>
+        
+        <div class="section">
+            <h2 style="text-align:left; font-family: Serif; font-weight: bold;">
+                <font color="#000000">Framework</font>
+            </h2>
+            <hr>
+            <div class="col justify-content-center text-center">
+                <div class="col-sm-12">
+                    <img src="images/paper/pp_pipline_v1.png" style="width:100%">
+                </div>
+            </div>
+            <p align="justify">
+                <font color="grey">
+                    Fig.1 
+                    (Top left) The framework of FLAM. 
+                    (Bottom left) The robot-human pose mapping process. Joint mappings are
+                    simplified for clarity.
+                    (Right) The overview of the stabilizing reward function.
+                </font>
+            </p>
+        </div>
+        <br>
+        
+        <div class="section">
+            <h2 style="text-align:left; font-family: Serif; font-weight: bold;">
+                <font color="#000000">Experiments</font>
+            </h2>
+            <hr>
+            <p align="justify">
+                <font color="grey" style="font-size:24px;">
+                    The proposed method demonstrated strong performance in humanoid locomotion and manipulation tasks. 
+                </font>
+                <font color="#48b1a8" style="font-size:24px;">
+                    Many tasks are incompleted, highlighting the challenges of humanoid robot control. 
+                    Further research is required.
+                    <!-- The incomplete tasks highlight the challenges of humanoid robot control, 
+                    emphasizing the need for further research. -->
+                </font>
+            </p>
+
+            <!-- LOCOMOTION TASKS -->
+            <h3 class="sub-title hollow" style="text-align:left; font-family: Serif; font-weight: bold; margin-top: 30px">
+                <font color="#000000">Locomotion</font>
+            </h3>
+            <div class="col justify-content-center text-center">
+                <div class="col-sm-12">
+                    <img src="images/paper/locomotion_results_600.png" style="width:100%">
+                </div>
+            </div>
+            <p align="justify">
+                <font color="grey">
+                    Fig.2
+                    Performance comparison of methods on locomotion tasks.
+                    The dashed lines qualitatively indicate task success. 
+                </font>
+            </p>
+
+            <!-- MANIPULATION TASKS -->
+            <h3 class="sub-title hollow" style="text-align:left; font-family: Serif; font-weight: bold; margin-top: 30px">
+                <font color="#000000">Manipulation</font>
+            </h3>
+            <div class="col justify-content-center text-center">
+                <div class="col-sm-12">
+                    <img src="images/paper/manipulation_results_600.png" style="width:100%">
+                </div>
+            </div>
+            <p align="justify">
+                <font color="grey">
+                    Fig.3
+                    Performance comparison of methods on manipulation tasks.
+                    The dashed lines qualitatively indicate task success. 
+                </font>
+            </p>
+
+        </div>
+        <br>
+
+        <div class="section">
+            <h2 style="text-align:left; font-family: Serif; font-weight: bold;">
+                <font color="#000000">Visualization</font>
+            </h2>
+            <hr>
+
+            <!-- LOCOMOTION TASKS -->
+            <h3 class="sub-title hollow" style="text-align:left; font-family: Serif; font-weight: bold;">
+                <font color="#000000">Locomotion</font>
+            </h3>
+
+            <div class="row justify-content-center text-center">
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/01_Walk.mp4" type="video/mp4">
+                    </video>
+                    <h4>Walk</h4>
+                </div>
+            
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/02_Stand.mp4" type="video/mp4">
+                    </video>
+                    <h4>Stand</h4>
+                </div>
+                
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/03_Run.mp4" type="video/mp4">
+                    </video>
+                    <h4>Run</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/04_Reach.mp4" type="video/mp4">
+                    </video>
+                    <h4>Reach</h4>
+                </div>
+            
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/05_Hurdle.mp4" type="video/mp4">
+                    </video>
+                    <h4>Hurdle</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/06_Crawl.mp4" type="video/mp4">
+                    </video>
+                    <h4>Crawl</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/07_Maze.mp4" type="video/mp4">
+                    </video>
+                    <h4>Maze</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/08_Sit-Hard.mp4" type="video/mp4">
+                    </video>
+                    <h4>Sit-Hard</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/09_Balance-Hard.mp4" type="video/mp4">
+                    </video>
+                    <h4>Balance-Hard</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/10_Stair.mp4" type="video/mp4">
+                    </video>
+                    <h4>Stair</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/11_Slide.mp4" type="video/mp4">
+                    </video>
+                    <h4>Slide</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Locomotion/12_Pole.mp4" type="video/mp4">
+                    </video>
+                    <h4>Pole</h4>
+                </div>
+            </div>
+ 
+            <!-- MANIPULATION TASKS -->
+            <h3 class="sub-title hollow" style="text-align:left; font-family: Serif; font-weight: bold; margin-top: 30px">
+                <font color="#000000">Manipulation</font>
+            </h3>
+
+            <div class="row justify-content-center text-center">
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/01_Door.mp4" type="video/mp4">
+                    </video>
+                    <h4>Door</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/02_Bookshelf-Simple.mp4" type="video/mp4">
+                    </video>
+                    <h4>Bookshelf-Simple</h4>
+                </div>
+                
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/03_Bookshelf-Hard.mp4" type="video/mp4">
+                    </video>
+                    <h4>Booksehlf-Hard</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/04_Spoon.mp4" type="video/mp4">
+                    </video>
+                    <h4>Spoon</h4>
+                </div>
+            
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/05_Powerlift.mp4" type="video/mp4">
+                    </video>
+                    <h4>Powerlift</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/06_Room.mp4" type="video/mp4">
+                    </video>
+                    <h4>Room</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/07_Insert-Small.mp4" type="video/mp4">
+                    </video>
+                    <h4>Insert-Small</h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <video muted autoplay="autoplay" loop="loop">
+                        <source src="videos/Manipulation/08_Insert-Normal.mp4" type="video/mp4">
+                    </video>
+                    <h4>Insert-Normal</h4>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <div class="section">
+            <h2 style="text-align:left; font-family: Serif; font-weight: bold;">
+                <font color="#000000">Contact</font>
+            </h2>
+            <p>
+                Thanks for your attention.
+                If you have any questions, feel free to contact <font color="#000000">Xianqi Zhang</font> [zhangxianqi@stu.hit.edu.cn].
+            </p>
+        </div>
+    
+        <div class="section">
+            <h2 style="text-align:left; font-family: Serif; font-weight: bold;">
+                <font color="#000000">BibTex</font>
+            </h2>
+            <hr>
+            <div class="bibtexsection">
+                TODO
+            </div>
+        </div>
+        <hr>
+    </dev>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+</html>
