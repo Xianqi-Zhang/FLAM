@@ -2,7 +2,8 @@
 
 ### [Project Page](https://xianqi-zhang.github.io/FLAM)
 
-<img src="/assets/flam.png" width="80%" height="80%">
+<!-- <img src="/assets/flam.png" width="80%" height="80%"> -->
+<img src="/assets/flam.png">
 
 
 ## A. Installation
