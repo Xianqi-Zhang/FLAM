@@ -2,9 +2,7 @@
 
 ### [Project Page](https://xianqi-zhang.github.io/FLAM)
 
-<!-- <img src="/assets/flam.png" width="80%" height="80%"> -->
-<img src="/assets/flam.png">
-
+![flam](/assets/flam.png "Overview of FLAM."){:height="50%" width="50%"}
 
 ## A. Installation
 
@@ -68,10 +66,10 @@
 
 
 ## C. Paper Training Curves
-* Training curves can be found in `visualization/data_vis`.
+* Training curves can be found in `results/data_vis`.
 * The results of baselines are taken from [Humanoid-Bench](https://github.com/carlosferrazza/humanoid-bench) and [CQN-AS](https://github.com/younggyoseo/CQN-AS).
 * The results of [CQN-AS](https://github.com/younggyoseo/CQN-AS) on `h1hand-sit_hard-v0`, `h1hand-balance_hard-v0`, `h1hand-stair-v0`, `h1hand-slide-v0`,  and `h1hand-pole-v0`, are reproduced accroding to the official implemention of [CQN-AS](https://github.com/younggyoseo/CQN-AS).
-* For visualization, just `python draw_locomotion.py` or `python draw_manipulation.py`.
+* For visualization, just `python *.py`.
 
 
 ## D. Other Notes
