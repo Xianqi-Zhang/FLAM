@@ -4,7 +4,7 @@
 
 ![flam](/assets/flam.png "Overview of FLAM."){:height="50%" width="50%"}
 
-## A. Installation
+## Installation
 
 * Create a conda environment:
     ```commandline
@@ -42,7 +42,7 @@
         ```
     - The interface of [RoHM](https://github.com/sanweiliti/RoHM?tab=readme-ov-file) has been modified to facilitate calling.
 
-## B. Training
+## Training
 
 * Fill in your [WANDB_API_KEY](https://wandb.ai/authorize) in the train.py
     ```commandline
@@ -65,17 +65,14 @@
     - config_rohm.py: the foundation model [RoHM](https://github.com/sanweiliti/RoHM) related. Just leave it alone.
 
 
-## C. Paper Training Curves
+## Training Curves
 * Training curves can be found in `results/data_vis`.
 * The results of baselines are taken from [Humanoid-Bench](https://github.com/carlosferrazza/humanoid-bench) and [CQN-AS](https://github.com/younggyoseo/CQN-AS).
 * The results of [CQN-AS](https://github.com/younggyoseo/CQN-AS) on `h1hand-sit_hard-v0`, `h1hand-balance_hard-v0`, `h1hand-stair-v0`, `h1hand-slide-v0`,  and `h1hand-pole-v0`, are reproduced accroding to the official implemention of [CQN-AS](https://github.com/younggyoseo/CQN-AS).
 * For visualization, just `python *.py`.
 
 
-## D. Other Notes
-* TODO
-
-## E. Possible Problems and Solutions
+## Possible Problems and Solutions
 
 #### 1. 'GLIBCXX_3.4.30' not found.
 ```commandline
@@ -130,19 +127,23 @@ sudo apt install mesa-utils glew-utils libglew-dev
 sudo apt install libosmesa6-dev
 ```
 
-**NOTE**:
-* The code is tested on Ubuntu 20.04 and Linux Mint 22, packages maybe not found in your OS. `apt-cache search package-name` can be used to search relative packages.
+* **NOTE**:
+  * The code is tested on Ubuntu 20.04 and Linux Mint 22, packages maybe not found in your OS. `apt-cache search package-name` can be used to search relative packages.
 
 
-## F. Citation
+## Misc: Code Insights, Lessons, and suggestions.
+* TODO
+
+
+## Citation
 
 ```commandline
 TODO
 ```
 
-## G. References
+## References
 
-This implementation based on the following repo:
+This implementation is based on the following repo:
 - Humanoid-Bench: https://github.com/carlosferrazza/humanoid-bench
 - RoHM: https://github.com/sanweiliti/RoHM
 - CQN-AS: https://github.com/younggyoseo/CQN-AS
