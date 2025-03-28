@@ -134,7 +134,7 @@ sudo apt install libosmesa6-dev
   * The code is tested on Ubuntu 20.04 and Linux Mint 22, packages maybe not found in your OS. `apt-cache search package-name` can be used to search relative packages.
 
 
-## Misc: Code Insights, Lessons, and suggestions.
+## Misc: Code Insights, Lessons, and Suggestions
 * TODO
 
 
