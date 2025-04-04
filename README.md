@@ -47,7 +47,7 @@
 
 ## Training
 
-* Fill in your [WANDB_API_KEY](https://wandb.ai/authorize) in the train.py
+* Fill in your [WANDB_API_KEY](https://wandb.ai/authorize) in the train.py. (wandb related settings can be found in config_model.py.)
     ```commandline
     os.environ['WANDB_API_KEY'] = 'xxxx'
     ```
@@ -135,8 +135,10 @@ sudo apt install libosmesa6-dev
 
 
 ## Misc: Code Insights, Lessons, and Suggestions
-* TODO
-
+1. To simplify implementation, the robot's global orientation is replaced with that of the pelvis joint. As a result, when visualizing long trajectory, you may notice a gradual deviation in their global orientation.
+2. The foundation model RoHM appears to be sensitive to certain random seeds. In other words, if a result from `[0, 1, 2]` is suboptimal, you can try `10`.
+3. TD-MPC2 is an excellent method, but it is extremely slow. Our experiments, including parameter tuning and formal evaluations, took over two months using four RTX 3090 GPUs (and even stronger). You can attempt to speed up the algorithm, but avoid using env parallelism, whether with AsyncVectorEnv or SubprocVecEnv, as it tends to flatten the learning curve. Don't waste time on this, this is the biggest lesson I learned from this work. At least, that was the outcome of my attempts.
+4. TODO. (I'll provide updates if I recall anything else.)
 
 ## Citation
 

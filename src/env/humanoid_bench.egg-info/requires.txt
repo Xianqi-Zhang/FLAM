@@ -1,0 +1,12 @@
+gymnasium
+rich
+tqdm
+ipdb
+mujoco
+mujoco-mjx
+dm_control
+imageio
+gymnax
+brax==0.9.4
+torch
+opencv-python
