@@ -1,4 +1,6 @@
 import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+
 import warnings
 from termcolor import cprint
 from src.configs.config_env import config_env
@@ -13,7 +15,6 @@ from src.utils.utils_parser import parse_cfg, update_cfg
 from src.configs.config_model import config_model
 
 warnings.filterwarnings('ignore')
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 # os.environ['WANDB_MODE'] = 'offline'
 os.environ['WANDB_API_KEY'] = ''  # * Fill in you key. 
 
