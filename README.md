@@ -143,7 +143,12 @@ sudo apt install libosmesa6-dev
 ## Citation
 
 ```commandline
-TODO
+@article{zhang2025flam,
+  title={FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation},
+  author={Zhang, Xianqi and Wei, Hongliang and Wang, Wenrui and Wang, Xingtao and Fan, Xiaopeng and Zhao, Debin},
+  journal={arXiv preprint arXiv:2503.22249},
+  year={2025}
+}
 ```
 
 ## References
