@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description"
-            content="FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation">
+            content="FLAM: Foundation Model-Based Motion Priors for Humanoid Locomotion and Manipulation">
         <meta name="author" content="Xianqi Zhang">
         <title>FLAM</title>
 
@@ -37,7 +37,7 @@
         <div class="container"></div>
         <h1 style="text-align: center; margin-bottom: 5px; font-family: 'Times New Roman'; font-style: italic;">
             <span class="text-shadow">FLAM</span>:
-            <span class="text-shadow">F</span>oundation Model-Based Body Stabilization for Humanoid
+            <span class="text-shadow">F</span>oundation Model-Based Motion Priors for Humanoid
             <span class="text-shadow">L</span>ocomotion
             <span class="text-shadow">a</span>nd
             <span class="text-shadow">M</span>anipulation
@@ -95,30 +95,20 @@
             <p align="justify">
             <font color="grey">
                 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
-                Humanoid robots have attracted significant attention in recent years. 
-                Reinforcement Learning (RL) is one
-                of the main ways to control the whole body of humanoid
-                robots. RL enables agents to complete tasks by learning from
-                environment interactions, guided by task rewards. However,
-                existing RL methods rarely explicitly consider the impact
-                of body stability on humanoid locomotion and manipulation.
-                Achieving high performance in whole-body control remains a
-                challenge for RL methods that rely solely on task rewards. In
-                this paper, we propose a Foundation model-based method for
-                humanoid Locomotion And Manipulation (FLAM for short).
-                FLAM integrates a stabilizing reward function with a basic
-                policy. The stabilizing reward function is designed to encourage
-                the robot to learn stable postures, thereby accelerating the
-                learning process and facilitating task completion. Specifically,
-                the robot pose is first mapped to the 3D virtual human model.
-                Then, the human pose is stabilized and reconstructed through
-                a human motion reconstruction model. Finally, the pose before
-                and after reconstruction is used to compute the stabilizing
-                reward. By combining this stabilizing reward with the task
-                reward, FLAM effectively guides policy learning. Experimental
-                results on a humanoid robot benchmark demonstrate that
-                FLAM outperforms state-of-the-art RL methods, highlighting
-                its effectiveness in improving stability and overall performance.
+                Humanoid robots have attracted significant attention in recent years. Reinforcement Learning
+                (RL) is one of the main ways to control the whole body of humanoid robots. RL enables agents to
+                complete tasks by learning from environment interactions, guided by task rewards. However, achieving
+                high performance in whole-body control remains a challenge for RL methods that rely solely on task
+                rewards. In this paper, we propose a Foundation model-based method for humanoid Locomotion And
+                Manipulation (FLAM for short). FLAM integrates a motion prior reward function with a basic policy.
+                The motion prior reward function is designed to encourage the robot to learn stable and plausible poses,
+                thereby accelerating the learning process and facilitating task completion. Specifically, the robot pose
+                is first mapped to the 3D virtual human model. Then, the human pose is stabilized and reconstructed
+                through a human motion reconstruction model. Finally, the pose before and after reconstruction
+                is used to compute the motion prior reward. By combining this motion prior reward with the task
+                reward, FLAM effectively guides policy learning. Experimental results on a humanoid robot benchmark
+                demonstrate that FLAM outperforms state-of-the-art RL methods, highlighting its effectiveness in
+                improving stability and overall performance. 
             </font>
             </p>
         </div>
