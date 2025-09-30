@@ -1,4 +1,4 @@
-# <u>FLAM</u>: <u>F</u>oundation Model-Based Body Stabilization for Humanoid <u>L</u>ocomotion <u>a</u>nd <u>M</u>anipulation
+# <u>FLAM</u>: <u>F</u>oundation Model-Based Motion Priors for Humanoid <u>L</u>ocomotion <u>a</u>nd <u>M</u>anipulation
 
 ### [Project Page](https://xianqi-zhang.github.io/FLAM)
 
